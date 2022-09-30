@@ -6,11 +6,11 @@ import "strings"
 type Labels map[string]string
 
 func (l Labels) String() string {
-    labelList := make([]string, len(l))
-    i := 0
-    for k, v := range l {
-        labelList[i] = k + "=" + v
-        i++
-    }
-    return strings.Join(labelList, ";")
+	labelList := make([]string, len(l))
+	i := 0
+	for k, v := range l {
+		labelList[i] = k + "=" + v
+		i++
+	}
+	return strings.Join(labelList, ";")
 }
