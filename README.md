@@ -13,6 +13,12 @@ go get go.arcalot.io/log
 
 The answer is simple: to create a clean API we can rely on. Even the `log` and `testing` packages in Go don't implement a common API for logging, not to mention the myriad libraries out there. We don't proscribe what library an application should use, but we do wish to standardize how we communicate with these libraries.
 
+## Should I use this library for my project?
+
+You can! However, keep in mind, this library is intended for Arcalot, and especially the Arcaflow use case. Features that are not needed here will not be added.
+
+You can always use this library on an as-is basis if you are happy with the feature set and we won't be breaking backwards compatibility in minor versions, but if we need a major change, we may move on from the current API in the next major version.
+
 ## Using the logger
 
 The easiest way to create a logger is to use the [`Config`](config.go) struct:
