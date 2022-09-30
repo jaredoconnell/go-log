@@ -70,4 +70,4 @@ func TestSomething(t *testing.T) {
 }
 ```
 
-For a more detailed explanation please see [our documentation](https://godoc.org/go.arcalot.io/log).
+For a more detailed explanation please see [our documentation](https://godoc.org/go.flow.arcalot.io/log).
