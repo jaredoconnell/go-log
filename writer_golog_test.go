@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"go.flow.arcalot.io/log"
+	"go.arcalot.io/log"
 )
 
 func TestGoLogger(t *testing.T) {

@@ -3,7 +3,7 @@ package log_test
 import (
 	"testing"
 
-	"go.flow.arcalot.io/log"
+	"go.arcalot.io/log"
 )
 
 func TestLevelShouldPrint(t *testing.T) {

@@ -1,3 +1,3 @@
-module go.flow.arcalot.io/log
+module go.arcalot.io/log
 
 go 1.18

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"go.flow.arcalot.io/log"
+	"go.arcalot.io/log"
 )
 
 //nolint:funlen

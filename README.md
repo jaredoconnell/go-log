@@ -4,7 +4,7 @@ This is a very simple API abstracting away other logging libraries, such as Go l
 can use it by running:
 
 ```
-go get go.flow.arcalot.io/log
+go get go.arcalot.io/log
 ```
 
 ## Why create a custom logging library?
@@ -20,7 +20,7 @@ The easiest way to create a logger is to use the [`Config`](config.go) struct:
 ```go
 package yourapplication
 
-import "go.flow.arcalot.io/log"
+import "go.arcalot.io/log"
 
 func main() {
     logConfig := log.Config{
@@ -38,7 +38,7 @@ You should now see a log message on your console. If you wish to log from a test
 ```go
 package yourapplication_test
 
-import "go.flow.arcalot.io/log"
+import "go.arcalot.io/log"
 
 func TestSomething(t *testing.T) {
     logConfig := log.Config{
@@ -56,7 +56,7 @@ You can also apply labels to the log messages. This will add metadata to your lo
 ```go
 package yourapplication_test
 
-import "go.flow.arcalot.io/log"
+import "go.arcalot.io/log"
 
 func TestSomething(t *testing.T) {
     logConfig := log.Config{
@@ -70,4 +70,4 @@ func TestSomething(t *testing.T) {
 }
 ```
 
-For a more detailed explanation please see [our documentation](https://godoc.org/go.flow.arcalot.io/log).
+For a more detailed explanation please see [our documentation](https://godoc.org/go.arcalot.io/log).
