@@ -4,6 +4,7 @@ import (
 	"fmt"
 	goLog "log"
 	"os"
+	"testing"
 	"time"
 )
 
@@ -51,6 +52,22 @@ func NewLogger(minLevel Level, writer Writer) Logger {
 		writer,
 		map[string]string{},
 	}
+}
+
+// NewTestLogger creates a logger that writes to the Go test output.
+func NewTestLogger(t *testing.T) Logger {
+	return NewLogger(
+		LevelDebug,
+		NewTestWriter(t),
+	)
+}
+
+// NewGoLogger writes to the Go log facility. If no logger is passed, the standard logger is used.
+func NewGoLogger(minimumLevel Level, logger ...*goLog.Logger) Logger {
+	return NewLogger(
+		minimumLevel,
+		NewGoLogWriter(logger...),
+	)
 }
 
 type logger struct {
