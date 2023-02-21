@@ -3,7 +3,7 @@ package log_test
 import (
 	"testing"
 
-	"go.arcalot.io/log"
+	"go.arcalot.io/log/v2"
 )
 
 func TestLevelShouldPrint(t *testing.T) {

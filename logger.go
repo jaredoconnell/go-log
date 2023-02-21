@@ -10,10 +10,16 @@ import (
 
 // Logger provides pluggable logging for Arcalot.
 type Logger interface {
+	// Debugf logs with the debug log level. This is the finest and least-consequential log type.
 	Debugf(format string, args ...interface{})
+	// Infof logs with the Info log level.
 	Infof(format string, args ...interface{})
+	// Warningf logs with the Warning log level.
 	Warningf(format string, args ...interface{})
+	// Errorf logs with the Error log level.
 	Errorf(format string, args ...interface{})
+	// Writef allows logging with convenient programmatic setting of level
+	Writef(level Level, format string, args ...interface{})
 
 	// WithLabel creates a child logger with this label attached.
 	WithLabel(name string, value string) Logger
@@ -77,22 +83,22 @@ type logger struct {
 }
 
 func (l logger) Debugf(format string, args ...interface{}) {
-	l.write(LevelDebug, format, args...)
+	l.Writef(LevelDebug, format, args...)
 }
 
 func (l logger) Infof(format string, args ...interface{}) {
-	l.write(LevelInfo, format, args...)
+	l.Writef(LevelInfo, format, args...)
 }
 
 func (l logger) Warningf(format string, args ...interface{}) {
-	l.write(LevelWarning, format, args...)
+	l.Writef(LevelWarning, format, args...)
 }
 
 func (l logger) Errorf(format string, args ...interface{}) {
-	l.write(LevelError, format, args...)
+	l.Writef(LevelError, format, args...)
 }
 
-func (l logger) write(level Level, message string, args ...interface{}) {
+func (l logger) Writef(level Level, message string, args ...interface{}) {
 	if !l.minLevel.ShouldPrint(level) {
 		return
 	}

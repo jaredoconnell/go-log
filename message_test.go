@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"go.arcalot.io/log"
+	"go.arcalot.io/log/v2"
 )
 
 func TestMessage(t *testing.T) {
